@@ -6,8 +6,10 @@
 }
 
 .device-details-img {
+  overflow: hidden;
   width: 100px;
   height: 100px;
+  border-radius: 8px;
   background-image: url('../../../../image/avatar.png');
   background-size: cover;
 }
