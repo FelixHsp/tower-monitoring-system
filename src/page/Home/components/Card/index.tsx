@@ -1,3 +1,8 @@
+/**
+ * @file 通用卡片
+ * @author Felix
+ */
+
 import React from 'react';
 
 import './index.css';

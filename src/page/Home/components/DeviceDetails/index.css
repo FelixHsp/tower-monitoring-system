@@ -26,3 +26,11 @@
 .device-details-info-text:nth-of-type(1) {
   margin: 10px 0 10px 0;
 }
+
+.device-details-number-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}

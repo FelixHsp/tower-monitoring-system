@@ -1,4 +1,7 @@
 @import '~antd/dist/antd.css';
+* {
+  user-select: none;
+}
 
 body {
   margin: 0;

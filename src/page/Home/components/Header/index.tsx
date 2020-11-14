@@ -1,3 +1,8 @@
+/**
+ * @file 头部组件
+ * @author Felix
+ */
+
 import React from 'react';
 
 import './index.css';
