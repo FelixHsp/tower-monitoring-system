@@ -19,3 +19,10 @@
   border-radius: 8px;
   background-color: #FFFFFF;
 }
+
+.home-no-data {
+  width: 300px;
+  height: 300px;
+  background-image: url('../../image/noData.png');
+  background-size: cover;
+}

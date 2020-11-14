@@ -1,0 +1,27 @@
+.real-time-data-select-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.real-time-data-select-title {
+  margin-right: 10px;
+}
+
+.real-time-data-table-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ant-table-cell {
+  width: 180px;
+}
+
+.default {
+  color: #52c41a;
+}
+.alarm {
+  color: red;
+}
