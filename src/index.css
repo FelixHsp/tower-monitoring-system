@@ -14,3 +14,39 @@ code {
     monospace;
 }
 
+@font-face {
+  font-family: "pingFangSC-Regular";
+  src: url("./font/PingFang-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PingFang-Medium";
+  src: url("./font/PingFang-Medium.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PingFang-Light";
+  src: url("./font/PingFang-Light.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PingFang-Heavy";
+  src: url("./font/PingFang-Heavy.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PingFang-ExtraLight";
+  src: url("./font/PingFang-ExtraLight.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PingFang-Bold";
+  src: url("./font/PingFang-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
