@@ -9,8 +9,8 @@ import { Select, Table, Tag, Spin } from 'antd';
 import Card from '../Card';
 
 import { EHomeDispatchType, IHomeDispatchAction } from '../../reducer/homeReducer';
+import { getCurrentData } from '../../common/utils';
 
-import { data } from './mock';
 import {
   TABLE_TAG_COLOR,
   ETableDataName,
@@ -25,11 +25,12 @@ const { Column } = Table;
 interface IRealTimeData {
   currentDevice: number;
   normalDevice: number;
+  deviceDataList: Array<any>;
   homeDispatch: React.Dispatch<IHomeDispatchAction>;
 }
 
 const RealTimeData: React.FC<IRealTimeData> = (props) => {
-  const { currentDevice, normalDevice, homeDispatch } = props;
+  const { currentDevice, normalDevice, deviceDataList, homeDispatch } = props;
   const [tableData, setTableData] = useState<Array<{}>>([]);
 
   const onSelect = (value: number) => {
@@ -39,15 +40,37 @@ const RealTimeData: React.FC<IRealTimeData> = (props) => {
     });
   };
 
+  const formatData = (deviceDataList: Array<any>, currentDevice: number) => {
+    const currentData = getCurrentData(deviceDataList, currentDevice);
+    const realTimeData = currentData[currentData.length - 1];
+    return [
+      {
+        key: '1',
+        dataName: 'yow',
+        currentValue: realTimeData.yow
+      },
+      {
+        key: '2',
+        dataName: 'roll',
+        currentValue: realTimeData.roll
+      },
+      {
+        key: '3',
+        dataName: 'pitch',
+        currentValue: realTimeData.pitch
+      }
+    ];
+  };
+
   useEffect(() => {
-    if (!normalDevice) {
+    if (!normalDevice || !deviceDataList.length) {
       return;
     }
     setTableData([]);
     setTimeout(() => {
-      setTableData(data);
-    }, 500);
-  }, [currentDevice, normalDevice]);
+      setTableData(formatData(deviceDataList, currentDevice));
+    }, 100);
+  }, [currentDevice, normalDevice, deviceDataList]);
 
   return (
     <Card title={'实时数据'}>

@@ -8,8 +8,7 @@
 .home-card-item:nth-of-type(2n - 1) {
   border-right: 1px solid #EBEBEB;
 }
-.home-card-item:nth-of-type(1),
-.home-card-item:nth-of-type(2) {
+.home-card-item:nth-of-type(1) {
   border-bottom: 1px solid #EBEBEB;
 }
 .home-card-item-title {

@@ -8,9 +8,11 @@ import React, { useReducer, useEffect } from 'react';
 import Header from './components/Header';
 import DeviceDetails from './components/DeviceDetails';
 import RealTimeData from './components/RealTimeData';
+import AlarmRecord from './components/AlarmRecord';
 import Card from './components/Card';
 
 import { HomeReducer, initalHomeState, homeReducer, EHomeDispatchType } from './reducer/homeReducer';
+import { data } from './mock';
 
 import './index.css';
 
@@ -20,7 +22,8 @@ const Home = () => {
   const {
     onlineDevice = 0,
     normalDevice = 0,
-    currentDevice = 1
+    currentDevice = 1,
+    deviceDataList = []
   } = homeState;
 
   useEffect(() => {
@@ -29,7 +32,8 @@ const Home = () => {
       homeDispatch({
         type: EHomeDispatchType.SET_DEVIECE,
         onlineDevice: 4,
-        normalDevice: 4
+        normalDevice: 4,
+        deviceDataList: data
       });
     }, 500);
   }, []);
@@ -47,11 +51,12 @@ const Home = () => {
         <RealTimeData
           currentDevice={currentDevice}
           normalDevice={normalDevice}
+          deviceDataList={deviceDataList}
           homeDispatch={homeDispatch}
         />
-        <Card title={'报警记录'}>
-
-        </Card>
+        <AlarmRecord
+          currentDevice={currentDevice}
+        />
         <Card title={'历史数据'}>
 
         </Card>

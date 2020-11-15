@@ -2,11 +2,13 @@ export interface IInitalHomeState {
   onlineDevice?: number;
   normalDevice?: number;
   currentDevice?: number;
+  deviceDataList?: Array<any>;
 }
 export const initalHomeState: IInitalHomeState = {
   onlineDevice: 0,
   normalDevice: 0,
-  currentDevice: 1
+  currentDevice: 1,
+  deviceDataList: []
 };
 
 export enum EHomeDispatchType {
@@ -18,6 +20,7 @@ export interface IHomeDispatchAction {
   onlineDevice?: number;
   normalDevice?: number;
   currentDevice?: number;
+  deviceDataList?: Array<any>;
 }
 export type HomeReducer = React.Reducer<IInitalHomeState, IHomeDispatchAction>
 
@@ -27,7 +30,8 @@ export const homeReducer: HomeReducer = (state, action) => {
       return {
         ...state,
         onlineDevice: action.onlineDevice,
-        normalDevice: action.normalDevice
+        normalDevice: action.normalDevice,
+        deviceDataList: action.deviceDataList
       };
     case EHomeDispatchType.SET_CURRENT_DEVICE:
       return {
