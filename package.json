@@ -2,6 +2,7 @@
   "name": "tower-monitoring-system",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@ant-design/charts": "^1.0.7",
     "@types/jest": "^26.0.15",
