@@ -18,3 +18,5 @@ export const TABLE_ALARM_VALUE = {
   [ETableDataName.roll]: 30,
   [ETableDataName.pitch]: 5
 };
+
+export const DEVICE_COLOR = ['volcano', 'orange', 'magenta', 'geekblue']

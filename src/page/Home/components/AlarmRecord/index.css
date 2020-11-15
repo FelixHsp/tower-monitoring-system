@@ -1,0 +1,23 @@
+.alarm-record-btn {
+  width: 100px;
+  z-index: 9;
+}
+.alarm-record-pie {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.alarm-record-modal-inner {
+  overflow-y: scroll;
+  height: 300px;
+}
+
+.alarm-record-modal-item {
+  margin: 0 0 20px 10px;
+}
+.alarm-record-modal-item-text {
+ margin-top: 3px; 
+}
