@@ -90,7 +90,7 @@ const RealTimeData: React.FC<IRealTimeData> = (props) => {
                     key={`real-time-data-select-option-${index}`}
                     value={index + 1}
                   >
-                    设备{index + 1}
+                    {index + 1}号设备
                   </Option>
                 );
               }

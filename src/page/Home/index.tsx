@@ -56,6 +56,7 @@ const Home = () => {
         />
         <AlarmRecord
           currentDevice={currentDevice}
+          deviceDataList={deviceDataList}
         />
         <Card title={'历史数据'}>
 
