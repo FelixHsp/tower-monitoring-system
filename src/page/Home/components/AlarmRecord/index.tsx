@@ -40,7 +40,7 @@ const AlarmRecord: React.FC<IAlarmRecord> = (props) => {
 
   return (
     <Card title={'报警记录'}>
-      <div onClick={() => {console.log(111)}}>
+      <div>
         <AlarmPie pieData={pieData} />
       </div>
     </Card>

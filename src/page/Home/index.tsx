@@ -9,7 +9,7 @@ import Header from './components/Header';
 import DeviceDetails from './components/DeviceDetails';
 import RealTimeData from './components/RealTimeData';
 import AlarmRecord from './components/AlarmRecord';
-import Card from './components/Card';
+import HistoricalData from './components/HistoricalData';
 
 import { HomeReducer, initalHomeState, homeReducer, EHomeDispatchType } from './reducer/homeReducer';
 import { data } from './mock';
@@ -54,13 +54,17 @@ const Home = () => {
           deviceDataList={deviceDataList}
           homeDispatch={homeDispatch}
         />
+        {/* 报警记录 */}
         <AlarmRecord
           currentDevice={currentDevice}
           deviceDataList={deviceDataList}
         />
-        <Card title={'历史数据'}>
-
-        </Card>
+        {/* 历史记录 */}
+        <HistoricalData
+          normalDevice={normalDevice}
+          currentDevice={currentDevice}
+          deviceDataList={deviceDataList}
+        />
       </div>
     </div>
   );
