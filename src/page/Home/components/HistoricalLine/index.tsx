@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Line } from '@ant-design/charts';
 
 interface IHistoricalLine {
@@ -11,7 +11,7 @@ const HistoricalLine: React.FC<IHistoricalLine> = (props) => {
   var config = {
     width: 560,
     data: lineData,
-    xField: 'time',
+    xField: 'createDate',
     yField: 'value',
     seriesField: 'category',
     yAxis: {
@@ -28,4 +28,4 @@ const HistoricalLine: React.FC<IHistoricalLine> = (props) => {
   return <Line {...config} />;
 };
 
-export default HistoricalLine;
+export default memo(HistoricalLine);

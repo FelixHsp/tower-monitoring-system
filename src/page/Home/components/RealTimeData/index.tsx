@@ -46,8 +46,8 @@ const RealTimeData: React.FC<IRealTimeData> = (props) => {
     return [
       {
         key: '1',
-        dataName: 'yow',
-        currentValue: realTimeData.yow
+        dataName: 'yaw',
+        currentValue: realTimeData.yaw
       },
       {
         key: '2',
@@ -70,7 +70,7 @@ const RealTimeData: React.FC<IRealTimeData> = (props) => {
     setTimeout(() => {
       setTableData(formatData(deviceDataList, currentDevice));
     }, 100);
-  }, [currentDevice, normalDevice, deviceDataList]);
+  }, [currentDevice, normalDevice, JSON.stringify(deviceDataList)]);
 
   return (
     <Card title={'实时数据'}>

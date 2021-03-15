@@ -3,7 +3,8 @@
  * @author Felix
  */
 
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect, useRef } from 'react';
+import axios from 'axios';
 
 import Header from './components/Header';
 import DeviceDetails from './components/DeviceDetails';
@@ -18,6 +19,7 @@ import './index.css';
 
 const Home = () => {
   const [homeState, homeDispatch] = useReducer<HomeReducer>(homeReducer, initalHomeState);
+  const loopTimer = useRef<any>(null);
   
   const {
     onlineDevice = 0,
@@ -26,16 +28,27 @@ const Home = () => {
     deviceDataList = []
   } = homeState;
 
-  useEffect(() => {
-    // 模拟网络请求
-    setTimeout(() => {
+  const getData = () => {
+    axios.get('http://47.98.249.211/tower-server/tower/getDeviceData').then(res => {
       homeDispatch({
         type: EHomeDispatchType.SET_DEVIECE,
         onlineDevice: 4,
         normalDevice: 4,
-        deviceDataList: data
+        deviceDataList: res.data.data
       });
-    }, 500);
+    });
+  };
+
+  useEffect(() => {
+    getData();
+
+    loopTimer.current = setInterval(() => {
+      getData();
+    }, 20000);
+
+    return () => {
+      clearInterval(loopTimer.current);
+    };
   }, []);
 
   return (

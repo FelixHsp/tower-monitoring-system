@@ -32,31 +32,28 @@ const HistoricalData: React.FC<IHistoricalData> = (props) => {
     const currentData = getCurrentData(deviceDataList, currentDevice);
     const newLineData: Array<{}> = [];
     for (let i = 0; i < currentData.length; i++) {
-      const { time, pitch, yow, roll } = (currentData as any)[i];
+      const { createDate, pitch, yaw, roll } = (currentData as any)[i];
       newLineData.push({
-        time,
+        createDate,
         value: pitch,
         category: ETableDataName['pitch']
       });
       newLineData.push({
-        time,
-        value: yow,
-        category: ETableDataName['yow']
+        createDate,
+        value: yaw,
+        category: ETableDataName['yaw']
       });
       newLineData.push({
-        time,
+        createDate,
         value: roll,
         category: ETableDataName['roll']
       });
     }
-    setLineData([]);
-    setTimeout(() => {
-      setLineData(newLineData);
-    }, 100);
-  }, [deviceDataList, currentDevice]);
+    setLineData(newLineData);
+  }, [JSON.stringify(deviceDataList), currentDevice]);
 
   return (
-    <Card title={'报警记录'}>
+    <Card title={'历史记录'}>
       <div className="historical-data-container">
         {(() => {
           if (!normalDevice) {

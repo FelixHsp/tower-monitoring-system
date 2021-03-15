@@ -44,7 +44,7 @@ const AlarmRecord: React.FC<IAlarmRecord> = (props) => {
         value: getCurrentData(newAlarmData, index + 1).length
       }
     }));
-  }, [deviceDataList]);
+  }, [JSON.stringify(deviceDataList)]);
 
   return (
     <Card title={'报警记录'}>
@@ -74,15 +74,15 @@ const AlarmRecord: React.FC<IAlarmRecord> = (props) => {
               const textTag = [];
               item[ETableDataName.pitch] >= TABLE_ALARM_VALUE[ETableDataName.pitch] && textTag.push(ETableDataName.pitch);
               item[ETableDataName.roll] >= TABLE_ALARM_VALUE[ETableDataName.roll] && textTag.push(ETableDataName.roll);
-              item[ETableDataName.yow] >= TABLE_ALARM_VALUE[ETableDataName.yow] && textTag.push(ETableDataName.yow);
+              item[ETableDataName.yaw] >= TABLE_ALARM_VALUE[ETableDataName.yaw] && textTag.push(ETableDataName.yaw);
 
               return (
                 <div
                   key={`alarm-record-modal-item-${index}`}
                   className="alarm-record-modal-item"
                 >
-                  <Tag color={DEVICE_COLOR[item.deviceId - 1]}>
-                    {item.deviceId}号设备
+                  <Tag color={DEVICE_COLOR[item.u_id - 1]}>
+                    {item.u_id}号设备
                   </Tag>
                   <div className="alarm-record-modal-item-text">
                     事件类型：
@@ -101,7 +101,7 @@ const AlarmRecord: React.FC<IAlarmRecord> = (props) => {
                     异常——输电杆塔存在倾斜情况
                   </div>
                   <div className="alarm-record-modal-item-text">
-                    报警时间：{item.time}
+                    报警时间：{item.createDate}
                   </div>
                 </div>
               );
