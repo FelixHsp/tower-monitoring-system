@@ -29,7 +29,7 @@ const Home = () => {
   } = homeState;
 
   const getData = () => {
-    axios.get('http://47.98.249.211/tower-server/tower/getDeviceData').then(res => {
+    axios.get('http://[2001:da8:270:2020:f816:3eff:feb5:455]/tower-server/tower/getDeviceData').then(res => {
       homeDispatch({
         type: EHomeDispatchType.SET_DEVIECE,
         onlineDevice: 4,

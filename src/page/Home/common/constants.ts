@@ -14,9 +14,9 @@ export const TABLE_TAG_COLOR = {
   [ETableDataName.pitch]: 'purple'
 };
 export const TABLE_ALARM_VALUE = {
-  [ETableDataName.yaw]: 10,
-  [ETableDataName.roll]: 10,
-  [ETableDataName.pitch]: 10
+  [ETableDataName.yaw]: 15,
+  [ETableDataName.roll]: 15,
+  [ETableDataName.pitch]: 15
 };
 
 export const DEVICE_COLOR = ['volcano', 'orange', 'magenta', 'geekblue']
